@@ -24,7 +24,7 @@ const server = net.createServer((socket)=>{
     let message = []
     socket.on('data', (data)=>{
         message.push(data);
-        if ( data === '\r\n'){
+        if ( message.join(''.endsWith('\r\n'))){
             console.log(`${clientId}: ${message.join("")}`);
             broadcast(`${clientId}: ${message.join("")}`, socket);
             message = [];
