@@ -38,3 +38,7 @@ socket.on('data', (data)=>{
 socket.on('close', ()=>{
     console.log("Disconnected")
 })
+
+socket.on('error', ()=>{
+    console.log('an error occurred')
+})
